@@ -1,0 +1,273 @@
+/* ===========================================================
+   Amtsklar — Ratgeber für Auto-Bürokratie
+   Design-Idee: Anlehnung an das deutsche Kfz-Kennzeichen
+   (EU-Blau, Kennzeichen-Weiß, geprägte Schrift) trifft auf
+   klare, moderne Behörden-Typografie.
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+  --plate-white: #fbfbf8;
+  --plate-black: #191919;
+  --eu-blue: #003399;
+  --eu-blue-dark: #00246e;
+  --amt-gold: #e8a93b;
+  --bg: #edefe9;
+  --bg-card: #ffffff;
+  --slate: #1e2a38;
+  --text: #232823;
+  --text-muted: #5b6259;
+  --border: #d8d6c9;
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .plate-font {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0 0 0.5em;
+}
+
+a { color: var(--eu-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--amt-gold);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; }
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Header: kompakt, Menü klappt bei Klick auf Logo auf --- */
+header.site-header {
+  background: #17181a;
+  border-bottom: 4px solid var(--amt-gold);
+}
+
+.header-inner {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+}
+
+.nav-toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-logo-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+}
+.header-logo-small {
+  height: 52px;
+  width: auto;
+  display: block;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+.menu-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #dfe4ea;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.menu-icon { font-size: 1rem; line-height: 1; color: var(--amt-gold); }
+
+nav.main-nav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+.nav-toggle-input:checked ~ nav.main-nav {
+  max-height: 500px;
+}
+.header-nav-list {
+  list-style: none;
+  margin: 0.8rem 0 0.2rem;
+  padding: 0.8rem 0 0;
+  border-top: 1px solid #33353a;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+.header-nav-list a {
+  display: inline-block;
+  color: #dfe4ea;
+  padding: 0.1rem 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+}
+.header-nav-list a:hover,
+.header-nav-list a[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: var(--amt-gold);
+  text-decoration: none;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 3rem 0 2.5rem;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--slate);
+  max-width: 20ch;
+}
+.hero p.lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 55ch;
+}
+
+/* --- Themen-Grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.1rem;
+  margin: 1.5rem 0 3rem;
+}
+.card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--eu-blue);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-decoration: none;
+}
+.card .step {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  color: var(--eu-blue);
+  letter-spacing: 0.08em;
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin: 0.3rem 0 0.5rem;
+  color: var(--slate);
+}
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 0.7rem;
+}
+.card .read-more {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--eu-blue);
+}
+.card.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.card.disabled .step { color: var(--text-muted); }
+
+/* --- Ad slot placeholders --- */
+.ad-slot {
+  background: repeating-linear-gradient(45deg, #f4f3ee, #f4f3ee 10px, #ebe9e0 10px, #ebe9e0 20px);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --- Artikel --- */
+.article-head {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.article-body {
+  padding: 2rem 0 3rem;
+  max-width: 70ch;
+}
+.article-body h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  border-left: 4px solid var(--amt-gold);
+  padding-left: 0.6rem;
+}
+.article-body ol, .article-body ul {
+  padding-left: 1.3rem;
+}
+.article-body li { margin-bottom: 0.5rem; }
+
+.callout {
+  background: #fff7e6;
+  border: 1px solid var(--amt-gold);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.callout strong { color: var(--eu-blue-dark); }
+
+/* --- Footer --- */
+footer.site-footer {
+  background: var(--slate);
+  color: #b7bec7;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  font-size: 0.85rem;
+}
+footer.site-footer a { color: #dfe4ea; }
+footer.site-footer .foot-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .plate-bar { flex-wrap: wrap; }
+  nav.main-nav ul { gap: 1rem; }
+}
