@@ -57,7 +57,7 @@ img { max-width: 100%; }
   padding: 0 1.5rem;
 }
 
-/* --- Header: Index links, Logo rechts --- */
+/* --- Header: großes Logo oben, Kapitel darunter senkrecht --- */
 header.site-header {
   background: #17181a;
   border-bottom: 4px solid var(--amt-gold);
@@ -65,44 +65,48 @@ header.site-header {
 
 .header-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.6rem 2rem;
+  gap: 0.4rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0.9rem 1.5rem;
+  padding: 1.3rem 1.5rem 1rem;
 }
 
 .header-logo-link {
+  order: -1;
   flex-shrink: 0;
   line-height: 0;
+  margin-bottom: 0.4rem;
 }
 .header-logo-small {
-  height: 58px;
+  height: 140px;
   width: auto;
   display: block;
-  border-radius: 4px;
+  opacity: 0.9;
+  mix-blend-mode: screen;
 }
 
 nav.main-nav {
-  flex: 1 1 auto;
-  min-width: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .header-nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
 }
 .header-nav-list a {
   display: inline-block;
   color: #dfe4ea;
-  padding: 0.3rem 0;
+  padding: 0.2rem 0;
   font-family: 'Oswald', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-bottom: 3px solid transparent;
