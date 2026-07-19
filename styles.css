@@ -85,6 +85,24 @@ header.site-header {
   pointer-events: none;
 }
 
+.header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-logo-mini {
+  height: 36px;
+  width: auto;
+  display: block;
+  opacity: 0.92;
+  transition: height 0.2s ease;
+}
+.header-logo-large .header-logo-mini {
+  height: 64px;
+}
+
 .header-logo-link {
   cursor: pointer;
   display: flex;
