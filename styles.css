@@ -78,7 +78,7 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.6rem 1.2rem;
   transition: padding 0.25s ease;
 }
@@ -92,7 +92,7 @@ header.site-header {
   width: auto;
   display: block;
   opacity: 0.95;
-  order: 2;
+  flex-shrink: 0;
   transition: height 0.25s ease;
 }
 .header-logo-large .header-logo-mini {
@@ -105,8 +105,29 @@ header.site-header {
   height: 44px;
 }
 
+.menu-compact {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  color: #e9ecef;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.menu-compact .menu-icon {
+  font-size: 1.1rem;
+  color: var(--knigge-gold);
+}
+.site-header.is-scrolled .menu-compact {
+  display: flex;
+}
+.site-header.is-scrolled nav.main-nav {
+  display: none;
+}
+
 nav.main-nav {
-  order: 1;
   flex: 1 1 auto;
   min-width: 0;
 }
