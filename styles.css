@@ -277,6 +277,27 @@ nav.main-nav {
   font-size: 1.05rem;
   max-width: 75ch;
 }
+.section-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.section-link {
+  flex-shrink: 0;
+  color: var(--knigge-green);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-bottom: 1.5rem;
+  transition: color 0.15s ease;
+}
+.section-link:hover {
+  color: var(--knigge-gold);
+  text-decoration: underline;
+}
 
 /* --- Themen-Grid & Kacheln --- */
 .grid {
@@ -509,12 +530,88 @@ nav.main-nav {
   background: #fbf8f2;
   border: 1px solid var(--knigge-gold);
   border-radius: var(--radius);
-  padding: 1.1rem 1.3rem;
+  padding: 1.1rem 1.3rem 1.1rem 3.2rem;
   margin: 1.5rem 0;
   font-size: 0.95rem;
+  position: relative;
 }
 .callout strong { color: var(--knigge-green); }
 .callout ul { margin: 0.4rem 0 0; }
+.callout::before {
+  content: "ℹ";
+  position: absolute;
+  left: 1.1rem;
+  top: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--knigge-gold);
+}
+
+/* Tipp-Box: freundliches Gelb, für praktische Tipps und Sparhinweise */
+.box-tip {
+  background: #fff9e0;
+  border: 1px solid #e8c94a;
+  border-left: 4px solid #e8c94a;
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem 1.1rem 3.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  position: relative;
+}
+.box-tip strong { color: #8a6d00; }
+.box-tip ul { margin: 0.4rem 0 0; }
+.box-tip::before {
+  content: "💡";
+  position: absolute;
+  left: 1.1rem;
+  top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Achtung-Box: gedecktes Warmrot, für wichtige Warnhinweise */
+.box-warning {
+  background: #fdf1ef;
+  border: 1px solid #d97a63;
+  border-left: 4px solid #c1553c;
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem 1.1rem 3.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  position: relative;
+}
+.box-warning strong { color: #a8402a; }
+.box-warning ul { margin: 0.4rem 0 0; }
+.box-warning::before {
+  content: "⚠";
+  position: absolute;
+  left: 1.1rem;
+  top: 1.05rem;
+  font-size: 1.1rem;
+  color: #c1553c;
+}
+
+/* Info-Box: ruhiges Blau, für neutrale Zusatzinfos */
+.box-info {
+  background: #eef5fa;
+  border: 1px solid #7fb3d5;
+  border-left: 4px solid #3d7ea6;
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem 1.1rem 3.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  position: relative;
+}
+.box-info strong { color: #2c5d7c; }
+.box-info ul { margin: 0.4rem 0 0; }
+.box-info::before {
+  content: "ℹ";
+  position: absolute;
+  left: 1.1rem;
+  top: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3d7ea6;
+}
 
 /* --- Footer --- */
 footer.site-footer {
