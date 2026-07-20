@@ -442,7 +442,124 @@ nav.main-nav {
   text-decoration: none;
   opacity: 0.9;
 }
-/* --- Akkordeon (aufklappbare Kapitel) --- */
+.partner-deals {
+  margin: 1rem 0 3rem;
+  padding: 1.8rem;
+  background: #f4f2ec;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+}
+.partner-deals h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.partner-deals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.partner-deal {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--knigge-green);
+  text-decoration: none;
+}
+.partner-deal:hover {
+  border-color: var(--knigge-gold);
+  color: var(--knigge-gold);
+  text-decoration: none;
+}
+
+
+.ad-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--knigge-green), #1f3d2e);
+  border: 1px solid var(--knigge-gold);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.4rem;
+  margin: 2.5rem 0;
+  text-decoration: none;
+  color: #f8f9fa;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ad-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(27, 54, 44, 0.18);
+  text-decoration: none;
+}
+.ad-banner-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #adb5bd;
+  border: 1px solid #adb5bd;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  flex-shrink: 0;
+}
+.ad-banner-text {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--knigge-gold);
+}
+
+
+.compare-table-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.compare-table thead th {
+  background: var(--knigge-green);
+  color: #fff;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+.compare-table thead th:not(:first-child) {
+  text-align: center;
+}
+.compare-table tbody td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.compare-table tbody td:not(:first-child) {
+  text-align: center;
+  font-weight: 600;
+}
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.compare-table tbody tr:nth-child(even) {
+  background: rgba(27, 54, 44, 0.03);
+}
+.compare-table td.ok { color: #1f7a3d; }
+.compare-table td.ok::before { content: "✓ "; }
+.compare-table td.no { color: #a8402a; }
+.compare-table td.no::before { content: "✗ "; }
+.compare-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+
 .accordion-section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -506,6 +623,17 @@ nav.main-nav {
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-bottom: 0.8rem;
+}
+.read-time {
+  display: inline-block;
+  background: #fff9e0;
+  border: 1px solid #e8c94a;
+  color: #8a6d00;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
 }
 .article-head h1 {
   font-size: clamp(1.7rem, 3.5vw, 2.3rem);
