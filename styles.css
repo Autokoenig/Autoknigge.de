@@ -476,39 +476,69 @@ nav.main-nav {
 }
 
 
-.ad-banner {
+/* --- Cookie-Consent-Banner --- */
+#cookie-consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  background: var(--knigge-green);
+  border-top: 3px solid var(--knigge-gold);
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.18);
+  padding: 1.2rem 1.5rem;
+}
+.cc-inner {
+  max-width: 1020px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  background: linear-gradient(135deg, var(--knigge-green), #1f3d2e);
-  border: 1px solid var(--knigge-gold);
-  border-radius: var(--radius);
-  padding: 1.1rem 1.4rem;
-  margin: 2.5rem 0;
-  text-decoration: none;
-  color: #f8f9fa;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
-.ad-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(27, 54, 44, 0.18);
-  text-decoration: none;
+.cc-text {
+  color: #e9ecef;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1 1 380px;
 }
-.ad-banner-label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #adb5bd;
-  border: 1px solid #adb5bd;
-  border-radius: 999px;
-  padding: 0.15rem 0.5rem;
+.cc-text a {
+  color: var(--knigge-gold);
+  text-decoration: underline;
+}
+.cc-buttons {
+  display: flex;
+  gap: 0.7rem;
   flex-shrink: 0;
 }
-.ad-banner-text {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--knigge-gold);
+.cc-btn {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.cc-btn-primary {
+  background: var(--knigge-gold);
+  color: var(--knigge-green);
+}
+.cc-btn-primary:hover { opacity: 0.9; }
+.cc-btn-secondary {
+  background: transparent;
+  color: #e9ecef;
+  border-color: #6b7a70;
+}
+.cc-btn-secondary:hover { border-color: var(--knigge-gold); color: var(--knigge-gold); }
+
+@media (max-width: 600px) {
+  .cc-inner { flex-direction: column; align-items: stretch; }
+  .cc-buttons { justify-content: stretch; }
+  .cc-btn { flex: 1; }
 }
 
 
