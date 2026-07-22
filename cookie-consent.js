@@ -1,5 +1,23 @@
 (function () {
   var STORAGE_KEY = 'autoknigge_cookie_consent_v2';
+  var ADSENSE_CLIENT = 'ca-pub-7178658520690671';
+  var adsenseLoaded = false;
+
+  function loadAdsense() {
+    if (adsenseLoaded) return;
+    adsenseLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
+    s.crossOrigin = 'anonymous';
+    document.head.appendChild(s);
+  }
+
+  function maybeLoadAdsense(consent) {
+    if (consent && consent.marketing) {
+      loadAdsense();
+    }
+  }
 
   function getConsent() {
     try {
@@ -13,6 +31,7 @@
     // Für spätere Skripte (z. B. AdSense, Analytics) global verfügbar machen:
     window.autoknigge_consent = obj;
     document.dispatchEvent(new CustomEvent('autoknigge:consent-updated', { detail: obj }));
+    maybeLoadAdsense(obj);
   }
 
   function buildBanner() {
@@ -76,6 +95,7 @@
     var existing = getConsent();
     if (existing) {
       window.autoknigge_consent = existing;
+      maybeLoadAdsense(existing);
     } else {
       buildBanner();
     }

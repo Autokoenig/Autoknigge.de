@@ -342,12 +342,21 @@ nav.main-nav {
   color: var(--knigge-gold);
 }
 .card .step {
-  font-size: 0.75rem;
+  display: inline-block;
+  font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--knigge-gold);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
+  color: var(--knigge-green);
+  background: #eef1ea;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.card:hover .step {
+  background: var(--knigge-gold);
+  color: var(--knigge-green);
 }
 .card h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -577,14 +586,21 @@ nav.main-nav {
 }
 
 
+.cat-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.cat-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--knigge-gold);
+}
+
+
 .kennzeichen-links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-top: 0.9rem;
-}
-.kennzeichen-links a {
   text-align: left;
 }
 .kennzeichen-links a::before {
